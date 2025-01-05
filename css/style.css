@@ -1,0 +1,15 @@
+/* Reset native CSS styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Generic CSS */
+
+h1,
+h2,
+h3 {
+  margin-bottom: 20px;
+}
