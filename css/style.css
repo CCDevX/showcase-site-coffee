@@ -146,7 +146,7 @@ p {
 /* vp */
 
 .vp {
-  height: 700px;
+  min-height: 700px;
   background: url(../img/frame.jpg) center center;
   background-size: cover;
   text-align: center;
@@ -154,13 +154,15 @@ p {
 
 .vp-content {
   max-width: 600px;
+  padding: 20px;
   padding-top: 150px;
   color: white;
+  display: block;
   margin: auto;
 }
 
 .vp-content h1 {
-  font-size: 50px;
+  font-size: 3rem;
 }
 
 .vp-content p {
@@ -173,7 +175,7 @@ p {
 
 .features {
   overflow: auto;
-  padding: 100px 0;
+  padding: 100px 20px 100px 20px;
   text-align: center;
 }
 
@@ -192,7 +194,7 @@ p {
 /* Reservation */
 
 .reservation {
-  padding: 100px 0px 100px 0px;
+  padding: 100px 20px 100px 20px;
   text-align: center;
 }
 
@@ -227,4 +229,35 @@ footer p {
 .where-text {
   float: right;
   width: 50%;
+}
+
+/* Contact */
+
+.contact {
+  padding: 180px 0px 100px 0px;
+  min-height: 100vh;
+}
+
+.contact-form-container {
+  max-width: 600px;
+  padding: 20px;
+  margin: auto;
+}
+
+.contact-form-container form label {
+  display: block;
+  font-weight: 700;
+}
+
+.contact-form-container form input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.contact-form-container form textarea {
+  min-height: 80px;
 }

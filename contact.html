@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cozy Cup | Home</title>
+    <title>Cozy Cup | Contact</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      media="only screen and (max-width:500px)"
+      href="./css/style_mobile.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,7 +34,20 @@
         </ul>
       </nav>
     </header>
-
+    <section class="contact">
+      <div class="contact-form-container">
+        <form action="#">
+          <h1 class="underline">Any Questions? Contact Us</h1>
+          <label class="my-20" for="name">Name</label>
+          <input type="text" name="name" id="name" />
+          <label class="my-20" for="email">Email</label>
+          <input type="email" name="email" id="email" />
+          <label class="my-20" for="question">Questions and Suggestions</label>
+          <textarea name="question" id="question"></textarea>
+          <button class="btn btn-dark my-20">Send</button>
+        </form>
+      </div>
+    </section>
     <footer>
       <p>Copyright &#9400; - Cozy Cup - 2025</p>
     </footer>
