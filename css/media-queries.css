@@ -78,6 +78,10 @@
   .vp-content p {
     font-size: 1.4rem;
   }
+  .where {
+    justify-content: flex-start;
+    padding: 3rem 2rem;
+  }
   .btn {
     font-size: 1.4rem;
     padding: 1.2rem 2.4rem;
