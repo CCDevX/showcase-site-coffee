@@ -1,0 +1,85 @@
+/* ========== Media Queries ========== */
+
+/* ----------- ≤ 768 px : tablettes & mobiles ----------- */
+@media (max-width: 768px) {
+  /* --- Header --- */
+  .header nav {
+    flex-direction: column;
+  }
+  .header nav h1 {
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+  .header nav ul {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .header nav ul li a {
+    width: 100%;
+    padding: 1.2rem 0;
+    text-align: center;
+    border-top: 0.1rem solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* --- Hero / Viewport --- */
+  .vp {
+    min-height: 50rem;
+  }
+  .vp-content {
+    max-width: 90%;
+    padding-top: 8rem;
+  }
+  .vp-content h1 {
+    font-size: 2.4rem;
+  }
+  .vp-content p {
+    font-size: 1.6rem;
+  }
+
+  /* --- Features --- */
+  .features {
+    padding: 6rem 2rem;
+  }
+  .feature {
+    float: none;
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+
+  /* --- Where section --- */
+  .where .container {
+    flex-direction: column;
+    gap: 6rem;
+  }
+  .where-img,
+  .where-text {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  /* --- Contact section --- */
+  .contact {
+    padding: 8rem 1rem;
+  }
+  .contact-form-container h1 {
+    font-size: 2rem;
+  }
+  .contact-form-container form {
+    gap: 1.6rem;
+  }
+}
+
+/* ----------- ≤ 480 px : petits mobiles ----------- */
+@media (max-width: 480px) {
+  .vp-content h1 {
+    font-size: 2rem;
+  }
+  .vp-content p {
+    font-size: 1.4rem;
+  }
+  .btn {
+    font-size: 1.4rem;
+    padding: 1.2rem 2.4rem;
+  }
+}

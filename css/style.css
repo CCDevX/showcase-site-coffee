@@ -1,4 +1,17 @@
-/* Reset native CSS styles */
+/* CSS Variables */
+:root {
+  --color-coffee-dark: #4e342e;
+  --color-coffee: #6d4c41;
+  --color-cream: #f6f1ed;
+  --color-gold: #d6a556;
+  --color-sage: #97b27d;
+  --color-text: #2b211c;
+}
+
+/* ========== Reset native CSS styles ========== */
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
 
 * {
   margin: 0;
@@ -6,159 +19,186 @@
   box-sizing: border-box;
 }
 
-/* Generic CSS */
-
+/* ========== Generic CSS ========== */
 html,
 body {
   font-family: "Open Sans", sans-serif;
-  color: #222;
+  color: var(--color-text);
+  background-color: var(--color-cream);
 }
 
 h1,
 h2,
 h3 {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+  font-weight: 700;
 }
 
 a {
-  color: #222;
+  color: var(--color-text);
   text-decoration: none;
 }
 
 p {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  line-height: 1.6em;
 }
 
 .my-10 {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 1rem 0;
 }
 
 .my-20 {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 2rem 0;
 }
 
 .separator {
-  margin: 20px auto;
-  height: 10px;
-  width: 100px;
-  background: #111;
+  margin: 2rem auto;
+  height: 0.8rem;
+  width: 9rem;
+  background: var(--color-gold);
+  border-radius: 0.6rem;
 }
 
+/* Buttons */
 .btn {
   display: inline-block;
-  font-size: 14px;
-  padding: 15px 25px;
-  border-radius: 30px;
+  font-size: 1.4rem;
+  padding: 1.4rem 2.6rem;
+  border-radius: 3rem;
   font-weight: 700;
-  border: 0px;
+  border: 0;
   cursor: pointer;
+  transition: all 0.25s ease;
 }
 
 .btn-primary {
-  background-color: white;
-  color: #222;
+  background-color: var(--color-gold);
+  color: var(--color-text);
 }
 
 .btn-primary:hover {
-  background-color: #222;
-  color: white;
+  background-color: var(--color-text);
+  color: var(--color-cream);
 }
 
 .btn-dark {
-  background-color: #222;
-  color: white;
+  background-color: var(--color-coffee-dark);
+  color: var(--color-cream);
 }
 
 .btn-dark:hover {
-  background-color: white;
-  color: #222;
-  border: 1px solid #222;
+  background-color: var(--color-cream);
+  color: var(--color-text);
+  border: 0.1rem solid var(--color-text);
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 100rem;
   display: block;
   margin: auto;
 }
 
 .underline {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.08);
 }
 
+/* Chips */
 .chip {
   display: inline-block;
-  width: 30px;
-  border-radius: 100%;
-  background: #333;
-  color: white;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  background: var(--color-coffee);
+  color: var(--color-cream);
   text-align: center;
+  line-height: 2.8rem;
+  font-size: 1.2rem;
 }
 
 .chip-purple {
-  background: #be418c;
+  background: var(--color-sage);
 }
 
 .chip-brown {
-  background: #8c5e24;
+  background: var(--color-coffee-dark);
 }
 
-/* Header */
+/* ========== Header ========== */
 
 .header {
-  background: #333;
-  overflow: auto;
-  line-height: 1.7em;
+  background: var(--color-coffee-dark);
+}
+
+.header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header nav h1 {
-  float: left;
-  padding: 20px;
-  margin-bottom: 0;
+  margin: 0;
+  padding: 2rem;
 }
 
 .header nav h1 a {
-  color: white;
+  color: var(--color-cream);
+  text-decoration: none;
 }
 
 .header nav ul {
-  float: right;
   list-style: none;
-}
-
-.header nav ul li {
-  float: left;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
 .header nav ul li a {
-  color: white;
-  padding: 20px;
+  font-size: 1.6rem;
+  color: var(--color-cream);
+  padding: 2rem;
   display: block;
+  transition: background 0.25s ease;
 }
 
 .header nav ul li a:hover,
-.active {
-  background: #444;
+.header nav ul li a.active {
+  background: var(--color-coffee);
 }
 
-/* vp */
-
+/* ========== Viewport (Hero) ========== */
 .vp {
-  min-height: 700px;
-  background: url(../img/frame.jpg) center center;
-  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 70rem;
+  background: url(../img/frame.jpg) center center / cover no-repeat;
+  position: relative;
   text-align: center;
 }
 
+/* subtle dark overlay for readability */
+.vp::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
 .vp-content {
-  max-width: 600px;
-  padding: 20px;
-  padding-top: 150px;
-  color: white;
-  display: block;
-  margin: auto;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 60rem;
+  padding: 2rem;
+  padding-top: 15rem;
+  color: var(--color-cream);
+  position: relative; /* to appear above overlay */
+  z-index: 1;
 }
 
 .vp-content h1 {
@@ -166,16 +206,15 @@ p {
 }
 
 .vp-content p {
-  font-size: 18px;
-  letter-spacing: 0.5px;
+  font-size: 1.8rem;
+  letter-spacing: 0.05rem;
   line-height: 1.9em;
 }
 
-/* Features */
-
+/* ========== Features ========== */
 .features {
   overflow: auto;
-  padding: 100px 20px 100px 20px;
+  padding: 10rem 2rem;
   text-align: center;
 }
 
@@ -184,26 +223,37 @@ p {
   width: 50%;
 }
 
-/* Person */
-
+/* ========== Person Section ========== */
 .person {
-  height: 400px;
-  background: url(../img/person.jpg) center center/cover;
+  height: 40rem;
+  background: url(../img/person.jpg) center center / cover no-repeat;
+  position: relative;
 }
 
-/* Reservation */
+.person::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(246, 241, 237, 0.25); /* soft cream veil */
+}
 
+/* ========== Reservation Call-to-Action ========== */
 .reservation {
-  padding: 100px 20px 100px 20px;
+  padding: 10rem 2rem;
   text-align: center;
+  background: var(--color-sage);
+  color: var(--color-cream);
 }
 
-/* Footer */
+.reservation h2 {
+  color: var(--color-cream);
+}
 
+/* ========== Footer ========== */
 footer {
-  background: #222;
-  color: white;
-  padding: 30px 0px 30px 0px;
+  background: var(--color-coffee-dark);
+  color: var(--color-cream);
+  padding: 3rem 0;
   text-align: center;
 }
 
@@ -211,53 +261,100 @@ footer p {
   margin-bottom: 0;
 }
 
-/* Where */
+/* ----------- Where (carte + texte) ----------- */
 
 .where {
-  padding: 180px 0px 100px 0px;
-  overflow: auto;
+  padding: 18rem 0 10rem;
   min-height: 100vh;
+}
+
+.where .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .where-img {
-  float: left;
-  width: 45%;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  flex: 0 1 45%;
+  max-width: 45%;
+  border: 0.1rem solid #ddd;
+  border-radius: 0.5rem;
 }
 
 .where-text {
-  float: right;
-  width: 50%;
+  flex: 1 1 50%;
+  max-width: 50%;
 }
 
-/* Contact */
+/* ---------- Contact ---------- */
 
 .contact {
-  padding: 180px 0px 100px 0px;
+  padding: 18rem 0 10rem; /* 180px 0 100px */
+
   min-height: 100vh;
+  padding: 5rem;
+  background: var(--color-cream);
 }
 
+/* conteneur centré */
 .contact-form-container {
-  max-width: 600px;
-  padding: 20px;
-  margin: auto;
+  max-width: 60rem; /* 600px */
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-.contact-form-container form label {
-  display: block;
-  font-weight: 700;
+/* mise en page du formulaire */
+.contact-form-container form {
+  display: flex;
+  flex-direction: column;
+  /* gap: 2rem; espace uniforme entre chaque bloc */
+  font-size: 1.6rem; /* 16px */
 }
 
-.contact-form-container form input,
-textarea {
-  display: block;
+/* titre */
+.contact-form-container h1 {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* labels */
+.contact-form-container label {
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+/* champs */
+.contact-form-container input,
+.contact-form-container textarea {
   width: 100%;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
+  padding: 1rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.3rem;
+  font-family: inherit;
+  font-size: 1.4rem;
+  background: #fff;
+  transition: border-color 0.25s ease;
 }
 
-.contact-form-container form textarea {
-  min-height: 80px;
+.contact-form-container input:focus,
+.contact-form-container textarea:focus {
+  border-color: var(--color-brown-dk);
+  outline: none;
+}
+
+/* textarea un peu plus grand */
+.contact-form-container textarea {
+  min-height: 14rem; /* 140px */
+  resize: none;
+}
+
+/* bouton aligné centre + look cohérent */
+.contact-form-container .btn {
+  align-self: center;
+  padding: 1.4rem 3.2rem;
+  border-radius: 3rem;
+  font-size: 1.6rem;
 }
